@@ -177,7 +177,7 @@ class ProjectBuilder(object):
         """
         Returns a set of the missing dependencies
 
-        :param distribution: Distribution to build (sdist or wheel)
+        :param distribution: Distribution to build ('sdist' or 'wheel')
         """
         dependencies = self.get_dependencies(distribution)
         dependencies.update(self.build_dependencies)
@@ -188,7 +188,7 @@ class ProjectBuilder(object):
         """
         Builds a distribution
 
-        :param distribution: Distribution to build (sdist or wheel)
+        :param distribution: Distribution to build ('sdist' or 'wheel')
         :param outdir: Output directory
         """
         build = getattr(self.hook, 'build_{}'.format(distribution))
